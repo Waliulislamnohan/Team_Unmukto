@@ -1,14 +1,39 @@
 .videoContainer{
 	position: absolute;
 	top:0;left:0;width:100%;height:100%;
+	display: flex;
+
 }
 .container{
 	position: relative;
 	width: 100%;
-	height: 100vh;
+	height: 200vh;
 }
 .navBar{
-	display: flex;
-	flex-direction: column;
-	width: 120px;
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    position: relative;
+    z-index: 1;
+    background-color: transparent;
+	padding-top: 300px;
+}
+
+.navBtn{
+	width: 150px;
+	height: auto;
+	background-color: rgb(2, 2, 90);
+	color: white;
+	border-radius: 2rem;
+	margin-top:5px;
+	padding: 10px;
+	font-size: 18px;
+	transition: width 0.3s; 
+	font-weight: 800;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+	border-style: outset;
+}
+
+.navBtn:hover {
+	width: 200px;
 }

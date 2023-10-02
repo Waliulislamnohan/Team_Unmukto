@@ -6,8 +6,8 @@ const VideoPlayer = () => {
 
   // Define video links for each floor
   const videoLinks = {
-    Ground: 'https://player.vimeo.com/video/869999310?badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479" frameborder="0" allow="autoplay; fullscreen; picture-in-picture' , // Replace with your Vimeo video ID
-    Second: 'https://veed.io/view/45583a3f-a234-4e0d-b11a-4b608600a46b', // Replace with your Vimeo video ID
+    Ground: 'https://www.youtube.com/embed/P6zX_R8-olM?si=CIFb_BUQ1KC9JIVz&amp;controls=0',
+    Second: 'https://www.youtube.com/embed/Z7Pn4PQjVI4?si=8MFrM_zXzYOt26fb&amp;controls=0',
     Basement: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/42c18216-f93f-44d6-a5e0-b4ae1eb421c7.gif?ClientID=vimeo-core-prod&Date=1696169339&Signature=98b8fdb3cce46073bd0a382daa01d56083c7bc1b', // Replace with your Vimeo video ID
   };
 
@@ -18,26 +18,26 @@ const VideoPlayer = () => {
 
   return (
     <div className={styles.container}>
-        <div className={styles.navBar}>
-        <button onClick={() => handleFloorClick('Ground')}>Ground Floor</button>
-        <button onClick={() => handleFloorClick('Second')}>Second Floor</button>
-        <button onClick={() => handleFloorClick('Basement')}>Basement</button>
+
+      <div className={styles.navBar}>
+        <button className={styles.navBtn} onClick={() => handleFloorClick('Ground')}>Ground Floor</button>
+        <button  className={styles.navBtn} onClick={() => handleFloorClick('Second')}>Second Floor</button>
+        <button  className={styles.navBtn} onClick={() => handleFloorClick('Basement')}>Basement</button>
       </div>
+
       <div className={styles.videoContainer}>
 
         <iframe
           title="Video Player"
           width = "100%"
-          height="100%" 
+          height="50%" 
           src={videoLinks[selectedFloor]}
-          frameborder="0" 
-          
+          frameBorder="0" 
           allowFullScreen
-        >
-            
-        </iframe>
+          autoPlay
+        ></iframe>
 
-
+       
         
 
       </div>
