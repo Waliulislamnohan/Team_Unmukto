@@ -1,13 +1,17 @@
 .videoContainer{
 	position: absolute;
 	top:0;left:0;width:100%;height:100%;
-	display: flex;
+	border-radius: 22rem--force;
 
 }
 .container{
-	position: relative;
+
 	width: 100%;
-	height: 200vh;
+	height: auto;
+	background-image: url(https://i.ibb.co/HBkM2Tc/space.jpg);
+	background-size: cover;
+    background-repeat: no-repeat;
+
 }
 .navBar{
     display: flex;
@@ -16,11 +20,11 @@
     position: relative;
     z-index: 1;
     background-color: transparent;
-	padding-top: 300px;
+	padding-top: 100px;
 }
 
 .navBtn{
-	width: 150px;
+	width: 250px;
 	height: auto;
 	background-color: rgb(2, 2, 90);
 	color: white;
@@ -35,5 +39,90 @@
 }
 
 .navBtn:hover {
-	width: 200px;
+	width: 300px;
+}
+
+.vr {
+	position: relative;
+	font-size: 200px;
+	display: flex;
+	flex-direction: row;
+}
+
+
+.firstTitle {
+    width: 400px;
+    background-color: rgb(2, 2, 90);
+    color: white;
+    border-radius: 2rem;
+    font-size: 18px;
+    padding: 12px;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-style: outset;
+	margin-bottom: 2px;
+    border: 2px solid;
+}
+
+.infoCard {
+    width: 500px;
+    height: auto;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	padding: 5px;
+	z-index: 2;
+	border-radius: 0.25rem;
+	align-items: center;
+	box-shadow:  0 5px 15px rgba(0, 0, 0, 0.1);
+	transition: all 0.3s linear;
+}
+.infoCard:hover {
+	box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+.infoCard img {
+    width: 100%;
+    height: 70%;
+
+}
+.infoSection {
+width: 100%;
+padding-top:650px;
+display: flex;
+gap: 5rem;
+flex-direction: row;
+justify-content: center;
+}
+
+
+.secondTitle {
+	
+	display: flex;
+    width: 400px;
+    background-color: rgb(2, 2, 90);
+    color: white;
+    border-radius: 2rem;
+    font-size: 18px;
+    padding: 12px;
+    font-weight: 800;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    border-style: outset;
+	margin-bottom: 2px;
+    border: 2px solid;
+}
+
+
+.title {
+	padding-top:500px
+}
+
+
+.ThirdSection {
+	margin: 50px;
+	padding-top: 100px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	gap: 5rem;
 }

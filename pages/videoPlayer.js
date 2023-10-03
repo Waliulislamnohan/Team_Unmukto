@@ -1,14 +1,23 @@
 import React, { useState } from 'react';
 import styles from '../styles/Home.module.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import YouTube from 'react-youtube';
+
+
 const VideoPlayer = () => {
   // Initialize the selected floor state
-  const [selectedFloor, setSelectedFloor] = useState('Ground');
+  const [selectedFloor, setSelectedFloor] = useState('Gallary');
 
   // Define video links for each floor
   const videoLinks = {
-    Ground: 'https://www.youtube.com/embed/P6zX_R8-olM?si=CIFb_BUQ1KC9JIVz&amp;controls=0',
-    Second: 'https://www.youtube.com/embed/Z7Pn4PQjVI4?si=8MFrM_zXzYOt26fb&amp;controls=0',
-    Basement: 'https://videoapi-muybridge.vimeocdn.com/animated-thumbnails/image/42c18216-f93f-44d6-a5e0-b4ae1eb421c7.gif?ClientID=vimeo-core-prod&Date=1696169339&Signature=98b8fdb3cce46073bd0a382daa01d56083c7bc1b', // Replace with your Vimeo video ID
+    Gallary: 'AOsowBSEIBw',
+    Earth: '2OBR26GsgwE',
+    Mission: '_FRvO7_BABw',
+    Space: '6VIhzP1_mfM'
+  };
+
+  const imageLinks = {
+    Ground: '',
   };
 
   // Function to handle floor button clicks
@@ -16,31 +25,62 @@ const VideoPlayer = () => {
     setSelectedFloor(floor);
   };
 
+  const opts = {
+    height: '100%',
+    width: '100%',
+    playerVars: {
+      mute: 1,
+      autoplay: 1, // Autoplay the video
+      loop: 1, // Loop the video
+      controls: 0, // Hide video controls
+      showinfo: 0, // Hide video title and other info
+      rel: 0,
+      volume: 0, // Disable related videos at the end
+    },
+  };
+
   return (
-    <div className={styles.container}>
-
+    <div >
       <div className={styles.navBar}>
-        <button className={styles.navBtn} onClick={() => handleFloorClick('Ground')}>Ground Floor</button>
-        <button  className={styles.navBtn} onClick={() => handleFloorClick('Second')}>Second Floor</button>
-        <button  className={styles.navBtn} onClick={() => handleFloorClick('Basement')}>Basement</button>
+        <div className={styles.firstTitle}>
+          <span>Express your idea to Unmukto meuseum </span>
+        </div>
+        <button
+          className={styles.navBtn}
+          onClick={() => handleFloorClick('Earth')}
+        >
+          Earth observatory floor
+        </button>
+        <button
+          className={styles.navBtn}
+          onClick={() => handleFloorClick('Mission')}
+        >
+          Mission observatory floor
+        </button>
+        <button
+          className={styles.navBtn}
+          onClick={() => handleFloorClick('Space')}
+        > 
+          Space observatory floor
+        </button>
       </div>
 
-      <div className={styles.videoContainer}>
+      <div>
+        <YouTube
+        className={styles.videoContainer}
+          videoId={videoLinks[selectedFloor]}
+          opts={opts}
+          onReady={(event) => {
+            // You can access the player object here if needed
+            event.target.playVideo(); // Autoplay the video
+          }}
+        />
+      </div>
 
-        <iframe
-          title="Video Player"
-          width = "100%"
-          height="50%" 
-          src={videoLinks[selectedFloor]}
-          frameBorder="0" 
-          allowFullScreen
-          autoPlay
-        ></iframe>
-
-       
+       <div>
         
+       </div> 
 
-      </div>
     </div>
   );
 };
