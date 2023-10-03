@@ -107,7 +107,7 @@ const InformationSection = () => {
         <div className={styles.infoCard} key={item.id}>
           {item.id === 2 ? (
             // Use the NeoCard component for the second card
-            <NeoCard neoData={item.description} />
+            <NeoCard neoData={data[1]} />
           ) : (
             <>
               <img src={item.image} alt={`Image ${item.id}`} />
