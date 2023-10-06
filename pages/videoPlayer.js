@@ -71,7 +71,7 @@ const VideoPlayer = () => {
           videoId={videoLinks[selectedFloor]}
           opts={opts}
           onReady={(event) => {
-            // You can access the player object here if needed
+
             event.target.playVideo(); // Autoplay the video
           }}
         />
