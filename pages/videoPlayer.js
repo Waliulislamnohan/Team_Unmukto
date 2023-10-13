@@ -17,7 +17,10 @@ const VideoPlayer = () => {
   };
 
   const imageLinks = {
-    Ground: '',
+    Gallary: '',
+    Earth: '',
+    Mission: '',
+    Space: '',
   };
 
   // Function to handle floor button clicks
